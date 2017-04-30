@@ -3,9 +3,6 @@
   <component name="ProjectRootManager" version="2" default="true" project-jdk-name="Python 3.4.0 (C:\Python34\python.exe)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\kkw52\AppData\Roaming\Subversion</configuration>
-  </component>
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">
