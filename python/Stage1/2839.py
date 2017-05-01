@@ -1,21 +1,32 @@
-import math
-
-n = input()
-x = 3
-y = 5
-temp  = 0
+inputN = input()
+n= int(inputN)
+temp = n
 temp2 = 0
 
-n1 = int(n)
+x = 5
+y = 3
+forCnt = 0
+xCnt = 0
+yCnt = 0
 
-if(n1 >= 3 and n1 <= 5000 ) :
-    temp = int(n1 / y)
-    n1 = n1 - (y * temp)
-    temp2 =  (n1 / x)
-    if(temp2 == math.floor(temp2)) :
-        temp = int(temp) +  int(temp2)
-        print(temp)
-    else :
-        print("-1")
+result = 0;
+
+if(n >= 3 and n <= 5000 ) :
+    forCnt = int(n / x)
+
+    for i in range(forCnt, -1, -1) :
+        temp = n - (x *  i)
+
+        yCnt =  int(temp / y)
+        temp2 = temp % y
+
+        if(temp2 == 0) :
+            xCnt = i
+            result = xCnt +  yCnt
+            print(result)
+            break
+
+    if(result == 0) :
+        print(-1)
 else :
-    print("")
+    print(-1)
