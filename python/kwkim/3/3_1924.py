@@ -6,7 +6,7 @@
 #   출력
 #       첫째 줄에 x월 y일이 무슨 요일인지에 따라 SUN, MON, TUE, WED, THU, FRI, SAT중 하나를 출력한다.
 
-def dayOfWeek(d):
+def getDayOfWeek(d):
     dayMap = {
         0: "MON",
         1: "TUE",
@@ -18,6 +18,15 @@ def dayOfWeek(d):
     }
     return dayMap[d % 7]
 
+def dayOfMonth(m):
+    sumDay = 0
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    for i in range(m):
+        sumDay += int(days[i])
+
+    return sumDay
+
 date = input().split(' ')
 x, y = int(date[0]), int(date[1])
 
@@ -28,4 +37,4 @@ while (x<1 or x>12) or (y<1 or y>31):
 monSub = x - 1
 daySub = y - 1
 
-print(dayOfWeek(363))
+print(getDayOfWeek(dayOfMonth(monSub)+daySub))
