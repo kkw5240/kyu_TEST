@@ -17,19 +17,20 @@ result = 0
 
 N = int(input())
 while N < 3 or N > 5000:
+    print(-1)
     N = int(input())
 
-i = 0
-while i < len(PACK):
-    if PACK[i] > N:
-        i += 1
-    elif PACK[i] < N:
-        N -= PACK[i]
-        result += 1
-        count[i] += 1
-    else:
-        result += 1
-        count[i] += 1
+for i in range(int(N / MAX_PACK), -1, -1):
+    tmp = N - (MAX_PACK * i)
+    count[1] = int(tmp / MIN_PACK)
 
-print(result)
-print(count)
+    if (tmp % MIN_PACK) == 0:
+        count[0] = i
+        result = count[0] + count[1]
+        print(result)
+        break
+
+if result == 0:
+    print(-1)
+
+#print(count)
